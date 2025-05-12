@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 15 - Conversão de Horas</title>
+</head>
+<body>
+  <h2>Conversor de horas para minutos e segundos</h2>
+  <input type="number" id="horas" placeholder="Digite as horas">
+  <button onclick="converterHoras()">Converter</button>
+  <div id="saida"></div>
+
+  <script>
+    function converterHoras() {
+      const horas = parseFloat(document.getElementById('horas').value);
+      if (isNaN(horas) || horas < 0) {
+        document.getElementById('saida').textContent = 'Digite um número de horas válido.';
+        return;
+      }
+
+      const minutos = horas * 60;
+      const segundos = horas * 3600;
+
+      document.getElementById('saida').textContent = 
+        `${horas} horas equivalem a ${minutos} minutos ou ${segundos} segundos.`;
+    }
+  </script>
+</body>
+</html>

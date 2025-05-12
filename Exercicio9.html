@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 9 - Faixa Etária</title>
+</head>
+<body>
+  <h2>Verificar faixa etária</h2>
+  <input type="number" id="idade" placeholder="Digite sua idade">
+  <button onclick="verificarIdade()">Verificar</button>
+  <div id="saida"></div>
+
+  <script>
+    function verificarIdade() {
+      const idade = parseInt(document.getElementById('idade').value);
+      let resultado = '';
+
+      if (isNaN(idade) || idade < 0) {
+        resultado = 'Digite uma idade válida.';
+      } else if (idade <= 12) {
+        resultado = 'Você é uma criança.';
+      } else if (idade <= 17) {
+        resultado = 'Você é um adolescente.';
+      } else if (idade <= 59) {
+        resultado = 'Você é um adulto.';
+      } else {
+        resultado = 'Você é um idoso.';
+      }
+
+      document.getElementById('saida').textContent = resultado;
+    }
+  </script>
+</body>
+</html>
